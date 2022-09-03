@@ -1,0 +1,2457 @@
+{
+    "info": {
+        "_postman_id": "6f4cc622-4e98-4b12-bf32-362c701c0d3b",
+        "name": "1.0.0",
+        "description": "Contact Support:\n Name: Zukron Alviandy Rahmadhan\n Email: zukronalviandy@gmail.com",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "9840862"
+    },
+    "item": [
+        {
+            "name": "author",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/author/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "author",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Author"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/author/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "author",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Author"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -73244845,\n  \"message\": \"in eu id\",\n  \"data\": {\n    \"id\": -29761454,\n    \"fullname\": \"magna pariatur\",\n    \"email\": \"incididunt ullamco occaecat\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/author/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "author",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Author"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/author/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "author",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Author"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -73244845,\n  \"message\": \"in eu id\",\n  \"data\": {\n    \"id\": -29761454,\n    \"fullname\": \"magna pariatur\",\n    \"email\": \"incididunt ullamco occaecat\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/author/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "author",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Author"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/author/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "author",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Author"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/author",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "author"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/author",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "author"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -11081773,\n  \"message\": \"consectetur adipisicing L\",\n  \"data\": [\n    {\n      \"id\": -67491080,\n      \"fullname\": \"vol\",\n      \"email\": \"culpa cupidatat\"\n    },\n    {\n      \"id\": 55425209,\n      \"fullname\": \"eu nisi\",\n      \"email\": \"commodo nisi deserunt qui\"\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/author",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "author"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -52350235,\n  \"fullname\": \"ea est fugiat anim\",\n  \"email\": \"pariatur incididunt ipsum laborum\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/author",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "author"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -73244845,\n  \"message\": \"in eu id\",\n  \"data\": {\n    \"id\": -29761454,\n    \"fullname\": \"magna pariatur\",\n    \"email\": \"incididunt ullamco occaecat\"\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "category",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/category/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "category",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Category"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/category/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "category",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Category"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -65890178,\n  \"message\": \"aliqua proident\",\n  \"data\": {\n    \"id\": -70609117,\n    \"name\": \"enim ad Ut\",\n    \"description\": \"ut id\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/category/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "category",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Category"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/category/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "category",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Category"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -65890178,\n  \"message\": \"aliqua proident\",\n  \"data\": {\n    \"id\": -70609117,\n    \"name\": \"enim ad Ut\",\n    \"description\": \"ut id\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/category/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "category",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Category"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/category/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "category",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Category"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/category",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "category"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/category",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "category"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -55519143,\n  \"message\": \"incididunt occaecat ut\",\n  \"data\": [\n    {\n      \"id\": 56866216,\n      \"name\": \"incididunt deserunt tempor\",\n      \"description\": \"culpa cupidatat\"\n    },\n    {\n      \"id\": 6548876,\n      \"name\": \"veniam officia\",\n      \"description\": \"labore minim non sint\"\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/category",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "category"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -13695167,\n  \"name\": \"labore\",\n  \"description\": \"nisi anim\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/category",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "category"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -65890178,\n  \"message\": \"aliqua proident\",\n  \"data\": {\n    \"id\": -70609117,\n    \"name\": \"enim ad Ut\",\n    \"description\": \"ut id\"\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "tag",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 65537779,\n  \"message\": \"non elit proident\",\n  \"data\": {\n    \"id\": 51820162,\n    \"name\": \"Excepteur in cillum\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 65537779,\n  \"message\": \"non elit proident\",\n  \"data\": {\n    \"id\": 51820162,\n    \"name\": \"Excepteur in cillum\"\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/tag",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tag"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -84489905,\n  \"message\": \"et minim exercitation\",\n  \"data\": [\n    {\n      \"id\": -3597575,\n      \"name\": \"Duis id aute\"\n    },\n    {\n      \"id\": 72140132,\n      \"name\": \"qui dolore mollit laborum\"\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/tag",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tag"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 29206886,\n  \"name\": \"exercitation amet sint laboris\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": 65537779,\n  \"message\": \"non elit proident\",\n  \"data\": {\n    \"id\": 51820162,\n    \"name\": \"Excepteur in cillum\"\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "tag news",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag_news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag_news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag_news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag_news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -62775826,\n  \"message\": \"occaecat anim et aute\",\n  \"data\": {\n    \"tag_id\": 84513089,\n    \"news_id\": 43141238\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag_news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag_news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag_news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag_news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -62775826,\n  \"message\": \"occaecat anim et aute\",\n  \"data\": {\n    \"tag_id\": 84513089,\n    \"news_id\": 43141238\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag_news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag_news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Tag News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/tag_news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "tag_news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Tag News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/tag_news",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tag_news"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag_news",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag_news"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -876755,\n  \"message\": \"do aliqua laboris nulla non\",\n  \"data\": [\n    {\n      \"tag_id\": -65870667,\n      \"news_id\": 17427478\n    },\n    {\n      \"tag_id\": 47541240,\n      \"news_id\": 12493907\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/tag_news",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "tag_news"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"tag_id\": 19597556,\n  \"news_id\": 50357543\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/tag_news",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "tag_news"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -62775826,\n  \"message\": \"occaecat anim et aute\",\n  \"data\": {\n    \"tag_id\": 84513089,\n    \"news_id\": 43141238\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "news",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -24465288,\n  \"message\": \"est in occaecat et\",\n  \"data\": {\n    \"id\": 56988314,\n    \"title\": \"ad\",\n    \"content\": \"laborum\",\n    \"category_id\": 97658221,\n    \"author_id\": -59422189,\n    \"created_at\": \"aute\",\n    \"is_published\": false\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -24465288,\n  \"message\": \"est in occaecat et\",\n  \"data\": {\n    \"id\": 56988314,\n    \"title\": \"ad\",\n    \"content\": \"laborum\",\n    \"category_id\": 97658221,\n    \"author_id\": -59422189,\n    \"created_at\": \"aute\",\n    \"is_published\": false\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/news/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "news",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID News"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/news/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "news",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID News"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/news",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "news"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/news",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "news"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -4714954,\n  \"message\": \"voluptate eiusmod commodo\",\n  \"data\": [\n    {\n      \"id\": -49605797,\n      \"title\": \"proident fugiat in laborum occaecat\",\n      \"content\": \"pariatur Excepteur ea in\",\n      \"category_id\": 25203893,\n      \"author_id\": 20106271,\n      \"created_at\": \"qui laborum amet\",\n      \"is_published\": false\n    },\n    {\n      \"id\": 55933137,\n      \"title\": \"est laborum\",\n      \"content\": \"proident eiusmod eu sit\",\n      \"category_id\": -43962537,\n      \"author_id\": 92184922,\n      \"created_at\": \"reprehenderit tempor veniam mollit\",\n      \"is_published\": true\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/news",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "news"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": 72063518,\n  \"title\": \"laboris velit\",\n  \"content\": \"cillum aliqua qui\",\n  \"category_id\": -7443459,\n  \"author_id\": -54302347,\n  \"created_at\": \"labore enim id pariatur\",\n  \"is_published\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/news",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "news"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -24465288,\n  \"message\": \"est in occaecat et\",\n  \"data\": {\n    \"id\": 56988314,\n    \"title\": \"ad\",\n    \"content\": \"laborum\",\n    \"category_id\": 97658221,\n    \"author_id\": -59422189,\n    \"created_at\": \"aute\",\n    \"is_published\": false\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "comment",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Detail",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/comment/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "comment",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Comment"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/comment/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "comment",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Comment"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -917555,\n  \"message\": \"ullamco Excepteur minim aliquip\",\n  \"data\": {\n    \"id\": -34185810,\n    \"commentator_name\": \"eu tempor nostrud occaecat\",\n    \"content\": \"sit\",\n    \"news_id\": -24191742,\n    \"created_at\": \"reprehenderit anim non in\",\n    \"is_banned\": true\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/comment/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "comment",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Comment"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/comment/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "comment",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Comment"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": -917555,\n  \"message\": \"ullamco Excepteur minim aliquip\",\n  \"data\": {\n    \"id\": -34185810,\n    \"commentator_name\": \"eu tempor nostrud occaecat\",\n    \"content\": \"sit\",\n    \"news_id\": -24191742,\n    \"created_at\": \"reprehenderit anim non in\",\n    \"is_banned\": true\n  }\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/comment/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "comment",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "-38560275",
+                                            "description": "(Required) ID Comment"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Success",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                            {
+                                                "description": "Added as a part of security scheme: basic",
+                                                "key": "Authorization",
+                                                "value": "Basic <credentials>"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/comment/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "comment",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "-38560275",
+                                                    "description": "(Required) ID Comment"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "body": "{\n  \"status\": 69728778,\n  \"message\": \"do elit in dolore\",\n  \"data\": \"sint elit in Duis commodo\"\n}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "List all",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/comment",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "comment"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/comment",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "comment"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -32412984,\n  \"message\": \"ut laborum reprehenderit id\",\n  \"data\": [\n    {\n      \"id\": 86540660,\n      \"commentator_name\": \"Lorem veniam sed\",\n      \"content\": \"mollit in dolor\",\n      \"news_id\": -9429343,\n      \"created_at\": \"nulla an\",\n      \"is_banned\": false\n    },\n    {\n      \"id\": 85752819,\n      \"commentator_name\": \"magna in\",\n      \"content\": \"dolor\",\n      \"news_id\": -998261,\n      \"created_at\": \"ex in ipsum\",\n      \"is_banned\": true\n    }\n  ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/comment",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "comment"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"id\": -911228,\n  \"commentator_name\": \"irure ull\",\n  \"content\": \"incididunt est commodo mollit\",\n  \"news_id\": -84824737,\n  \"created_at\": \"magna laborum ad pariatur\",\n  \"is_banned\": false\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/comment",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "comment"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"status\": -917555,\n  \"message\": \"ullamco Excepteur minim aliquip\",\n  \"data\": {\n    \"id\": -34185810,\n    \"commentator_name\": \"eu tempor nostrud occaecat\",\n    \"content\": \"sit\",\n    \"news_id\": -24191742,\n    \"created_at\": \"reprehenderit anim non in\",\n    \"is_banned\": true\n  }\n}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "127.0.0.1:9000",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,593 @@
+openapi: 3.0.0
+info:
+  title: Mob Portal
+  version: 1.0.0
+  description: OpenAPI for PT MOB RESTfull API
+  contact:
+    name: Muhammad Aufa Asmawy
+    email: aufamuhammad19551@gmail.com
+  license:
+    name: MIT
+servers:
+  - url: localhost:8080
+paths:
+  /author:
+    get:
+      tags:
+        - Author
+      description: get list of authors
+      parameters:
+        - in: query
+          name: fullname
+          schema:
+            type: string
+        - in: query
+          name: email
+          schema:
+            type: string
+      responses:
+        '200':
+          description: return a list of author objects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfAuthor'
+    post:
+      tags:
+        - Author
+      description: create author
+      requestBody:
+        description: json of object to be created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        '200':
+          description: return created author object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+  /author/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      tags:
+        - Author
+      description: get author by id
+      responses:
+        '200':
+          description: return a author object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+    post:
+      tags:
+        - Author
+      description: update author by id
+      requestBody:
+        description: json of object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        '200':
+          description: return status and updated author object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    delete:
+      tags:
+        - Author
+      description: delete author by id
+      responses:
+        '200':
+          description: return status and deleted authorobject
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /category:
+    get:
+      tags:
+        - Category
+      description: get list of categories
+      responses:
+        '200':
+          description: return a list of category objects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfCategory'
+    post:
+      tags:
+        - Category
+      description: create category
+      requestBody:
+        description: json of object to be created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: return created deleted category object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+  /category/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      tags:
+        - Category
+      description: get category by id
+      responses:
+        '200':
+          description: return a category object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+    post:
+      tags:
+        - Category
+      description: update category by id
+      requestBody:
+        description: json of object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: return status and updated category object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    delete:
+      tags:
+        - Category
+      description: delete category by id
+      responses:
+        '200':
+          description: return status and deleted category object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /tag:
+    get:
+      tags:
+        - Tag
+      description: get list of tags
+      responses:
+        '200':
+          description: return list of tag objects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfTag'
+    post:
+      tags:
+        - Tag
+      description: creat tag
+      requestBody:
+        description: json of object to be created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '200':
+          description: return created object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+  /tag/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      tags:
+        - Tag
+      description: get tag by id
+      responses:
+        '200':
+          description: return a tag object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+    post:
+      tags:
+        - Tag
+      description: update tag by id
+      requestBody:
+        description: json of object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '200':
+          description: return status and updated tag object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    delete:
+      tags:
+        - Tag
+      description: delete tag by id
+      responses:
+        '200':
+          description: return status and deleted tag object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+  /news:
+    get:
+      tags:
+        - News
+      description: get list of news
+      parameters:
+        - in: query
+          name: title
+          schema:
+            type: string
+        - in: query
+          name: tag_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: category_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: author_id
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: return a list of news
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfNews'
+    post:
+      tags:
+        - News
+      description: creat news
+      requestBody:
+        description: json of object to be created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        '200':
+          description: return created news object
+          content:
+            applicaton/json:
+              schema:
+                $ref: '#/components/schemas/News'
+  /news/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      tags:
+        - News
+      description: get news by id
+      responses:
+        '200':
+          description: return news object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+    post:
+      tags:
+        - News
+      description: upadte news by id
+      requestBody:
+        description: json of object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        '200':
+          description: return status and updated news object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    delete:
+      tags:
+        - News
+      description: delete news by id
+      responses:
+        '200':
+          description: 'return status and deleted news object '
+          content:
+            applcation/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /comment:
+    get:
+      tags:
+        - Comment
+      description: get list of comments
+      parameters:
+        - in: query
+          name: news_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: is_banned
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: return a list of comment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfComment'
+    post:
+      tags:
+        - Comment
+      description: create comment
+      requestBody:
+        description: json of object to be created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          description: return created comment object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /comment/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      tags:
+        - Comment
+      description: get comment by id
+      responses:
+        '200':
+          description: return a comment object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+    post:
+      tags:
+        - Comment
+      description: update comment by id
+      requestBody:
+        description: json of object to be updated
+        content:
+          appliacation/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          description: return status and updated comment object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    delete:
+      tags:
+        - Comment
+      description: delete comment by id
+      responses:
+        '200':
+          description: return status and deleted object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /report:
+    get:
+      tags:
+        - Report
+      description: 'get all report'
+      responses:
+        200:
+          description: 'return list of report'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+components:
+  schemas:
+    ListOfAuthor:
+      type: array
+      items:
+        $ref: '#/components/schemas/Author'
+    Author:
+      type: object
+      required:
+        - id
+        - email
+        - fullname
+      properties:
+        id:
+          type: integer
+          format: int64
+        fullname:
+          type: string
+        email:
+          type: string
+    ListOfCategory:
+      type: array
+      items:
+        $ref: '#/components/schemas/Category'
+    Category:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+    ListOfTag:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+    Tag:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: iny64
+        name:
+          type: string
+    ListOfNews:
+      type: array
+      items:
+        $ref: '#/components/schemas/News'
+    News:
+      type: object
+      required:
+        - id
+        - title
+        - content
+        - category_id
+        - author_id
+        - created_at
+        - is_publish
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        content:
+          type: string
+        category_id:
+          type: integer
+          format: int64
+        author_id:
+          type: integer
+          format: int64
+        created_at:
+          type: string
+          format: date-time
+        is_publish:
+          type: boolean
+    ListOfComment:
+      type: array
+      items:
+        $ref: '#/components/schemas/Comment'
+    Comment:
+      type: object
+      required:
+        - id
+        - commentator_name
+        - content
+        - news_id
+        - created_at
+        - is_banned
+      properties:
+        id:
+          type: integer
+          format: int64
+        commentator_name:
+          type: string
+        content:
+          type: string
+        news_id:
+          type: integer
+          format: int64
+        created_at:
+          type: string
+          format: date-time
+        is_banned:
+          type: boolean
+          default: false
+    Report:
+      type: object
+      required:
+        - pie_chart
+        - bar_chart
+      properties:
+        pie_chart:
+          type: array
+          items:
+            type: object
+        bar_chart:
+          type: array
+          items:
+            type: object
+    Message:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        data:
+          type: object
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []

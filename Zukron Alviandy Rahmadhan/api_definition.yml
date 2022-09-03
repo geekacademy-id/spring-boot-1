@@ -1,0 +1,772 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: "Training Spring Boot"
+  contact:
+    email: zukronalviandy@gmail.com
+    name: Zukron Alviandy Rahmadhan
+  license:
+    name: MIT
+servers:
+  - url: "127.0.0.1:9000"
+paths:
+  /author:
+    get:
+      tags:
+        - author
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Author"
+    post:
+      tags:
+        - author
+      summary: "Create"
+      requestBody:
+        description: "Author Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Author"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Author"
+  /author/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID Author"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - author
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Author"
+    put:
+      tags:
+        - author
+      summary: "Update"
+      requestBody:
+        description: "Author Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Author"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Author"
+    delete:
+      tags:
+        - author
+      summary: "Delete"
+      requestBody:
+        description: "Author Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Author"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+  /category:
+    get:
+      tags:
+        - category
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Category"
+    post:
+      tags:
+        - category
+      summary: "Create"
+      requestBody:
+        description: "Category Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Category"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Category"
+  /category/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID Category"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - category
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Category"
+    put:
+      tags:
+        - category
+      summary: "Update"
+      requestBody:
+        description: "Category Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Category"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Category"
+    delete:
+      tags:
+        - category
+      summary: "Delete"
+      requestBody:
+        description: "Category Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Category"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+  /tag:
+    get:
+      tags:
+        - tag
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Tag"
+    post:
+      tags:
+        - tag
+      summary: "Create"
+      requestBody:
+        description: "Tag Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tag"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Tag"
+  /tag/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID Tag"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - tag
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Tag"
+    put:
+      tags:
+        - tag
+      summary: "Update"
+      requestBody:
+        description: "Tag Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tag"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Tag"
+    delete:
+      tags:
+        - tag
+      summary: "Delete"
+      requestBody:
+        description: "Tag Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tag"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+  /tag_news:
+    get:
+      tags:
+        - tag_news
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/TagNews"
+    post:
+      tags:
+        - tag_news
+      summary: "Create"
+      requestBody:
+        description: "Tag News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TagNews"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/TagNews"
+  /tag_news/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID Tag News"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - tag_news
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/TagNews"
+    put:
+      tags:
+        - tag_news
+      summary: "Update"
+      requestBody:
+        description: "Tag News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TagNews"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/TagNews"
+    delete:
+      tags:
+        - tag_news
+      summary: "Delete"
+      requestBody:
+        description: "Tag News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TagNews"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+  /news:
+    get:
+      tags:
+        - news
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/News"
+    post:
+      tags:
+        - news
+      summary: "Create"
+      requestBody:
+        description: "News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/News"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/News"
+  /news/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID News"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - news
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/News"
+    put:
+      tags:
+        - news
+      summary: "Update"
+      requestBody:
+        description: "News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/News"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/News"
+    delete:
+      tags:
+        - news
+      summary: "Delete"
+      requestBody:
+        description: "News Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/News"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+  /comment:
+    get:
+      tags:
+        - comment
+      summary: "List all"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Comment"
+    post:
+      tags:
+        - comment
+      summary: "Create"
+      requestBody:
+        description: "Comment Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Comment"
+  /comment/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "ID Comment"
+        schema:
+          type: integer
+          format: int64
+        required: true
+    get:
+      tags:
+        - comment
+      summary: "Detail"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Comment"
+    put:
+      tags:
+        - comment
+      summary: "Update"
+      requestBody:
+        description: "Comment Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/DefaultResponse"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Comment"
+    delete:
+      tags:
+        - comment
+      summary: "Delete"
+      requestBody:
+        description: "Comment Data"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefaultResponse"
+
+components:
+  schemas:
+    DefaultResponse:
+      type: object
+      required:
+        - status
+        - message
+        - data
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
+    Author:
+      type: object
+      required:
+        - id
+        - fullname
+        - email
+      properties:
+        id:
+          type: integer
+          format: int64
+        fullname:
+          type: string
+        email:
+          type: string
+    Category:
+      type: object
+      required:
+        - id
+        - name
+        - description
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+    Tag:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    TagNews:
+      type: object
+      required:
+        - tag_id
+        - news_id
+      properties:
+        tag_id:
+          type: integer
+          format: int64
+        news_id:
+          type: integer
+          format: int64
+    News:
+      type: object
+      required:
+        - id
+        - title
+        - content
+        - category_id
+        - author_id
+        - created_at
+        - is_published
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        content:
+          type: string
+        category_id:
+          type: integer
+          format: int64
+        author_id:
+          type: integer
+          format: int64
+        created_at:
+          type: string
+        is_published:
+          type: boolean
+    Comment:
+      type: object
+      required:
+        - id
+        - commentator_name
+        - content
+        - news_id
+        - created_at
+        - is_banned
+      properties:
+        id:
+          type: integer
+          format: int64
+        commentator_name:
+          type: string
+        content:
+          type: string
+        news_id:
+          type: integer
+          format: inte64
+        created_at:
+          type: string
+        is_banned:
+          type: boolean
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []
