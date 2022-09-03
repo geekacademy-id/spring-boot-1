@@ -459,4 +459,3 @@ components:
       scheme: basic
 security:
   - BasicAuth: []
-
