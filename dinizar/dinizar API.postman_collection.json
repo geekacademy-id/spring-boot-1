@@ -1,0 +1,2305 @@
+{
+	"info": {
+		"_postman_id": "18ff4000-5964-4a44-87a5-2b25d9eb4bf2",
+		"name": "dinizar API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7128849"
+	},
+	"item": [
+		{
+			"name": "author",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Returns a author detail.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/author/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"author",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "get detail"
+							},
+							"response": [
+								{
+									"name": "return detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "https://e6f3aa97-eb75-4e62-88c9-444b60ca1188.mock.pstmn.io/author/:id",
+											"protocol": "https",
+											"host": [
+												"e6f3aa97-eb75-4e62-88c9-444b60ca1188",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"author",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a author.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/author/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"author",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "update"
+							},
+							"response": [
+								{
+									"name": "return status and object",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/author/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"author",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a author.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/author/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"author",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/author/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"author",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Returns a list of author.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/author?fullname=veniam do sed&email=veniam do sed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author"
+							],
+							"query": [
+								{
+									"key": "fullname",
+									"value": "veniam do sed"
+								},
+								{
+									"key": "email",
+									"value": "veniam do sed"
+								}
+							]
+						},
+						"description": "list and search"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/author?fullname=veniam do sed&email=veniam do sed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"author"
+									],
+									"query": [
+										{
+											"key": "fullname",
+											"value": "veniam do sed"
+										},
+										{
+											"key": "email",
+											"value": "veniam do sed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 71775262,\n    \"email\": \"nisi elit tempor sed proident\",\n    \"fullname\": \"in qui eu\"\n  },\n  {\n    \"id\": 94081699,\n    \"email\": \"dolore sint elit\",\n    \"fullname\": \"Ut minim culpa\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a author.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author"
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/author",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"author"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 10092940,\n  \"email\": \"laborum cupidatat ad\",\n  \"fullname\": \"ad\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Returns a category detail.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "get detail"
+							},
+							"response": [
+								{
+									"name": "return detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a category.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "update"
+							},
+							"response": [
+								{
+									"name": "return status and object",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a category.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Returns a list of category.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/category?name=veniam do sed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "veniam do sed"
+								}
+							]
+						},
+						"description": "list and search"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category?name=veniam do sed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "veniam do sed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 19198220,\n    \"name\": \"do et nisi nulla\",\n    \"description\": \"cillum ex in minim\"\n  },\n  {\n    \"id\": -47538786,\n    \"name\": \"adipisicing minim sed\",\n    \"description\": \"aliqua sit non\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a category.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category"
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -40906780,\n  \"name\": \"adipisicing nulla cupidatat laborum\",\n  \"description\": \"sit do\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Returns a news detail.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "get detail"
+							},
+							"response": [
+								{
+									"name": "return detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a news.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "update"
+							},
+							"response": [
+								{
+									"name": "return status and object",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a news.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Returns a list of news.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/news?title=veniam do sed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"news"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "veniam do sed"
+								}
+							]
+						},
+						"description": "list and search"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/news?title=veniam do sed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"news"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "veniam do sed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -38360901,\n    \"title\": \"in ullamco deserunt\",\n    \"content\": \"laborum sed consequat\",\n    \"category_id\": -7714996,\n    \"author_id\": -43180048,\n    \"create_at\": \"1948-01-22T06:10:35.092Z\",\n    \"is_published\": false\n  },\n  {\n    \"id\": 43319255,\n    \"title\": \"mollit\",\n    \"content\": \"officia enim consequat\",\n    \"category_id\": 98042136,\n    \"author_id\": 21396953,\n    \"create_at\": \"1952-09-29T05:34:35.338Z\",\n    \"is_published\": false\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a news.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/news",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"news"
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/news",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"news"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Returns a comment detail.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/comment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "get detail"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comment/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comment",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -82394813,\n  \"commentator_name\": \"occaecat id cupidatat dolore in\",\n  \"content\": \"do E\",\n  \"news_id\": 45894258,\n  \"create_at\": \"1994-08-19T17:00:16.345Z\",\n  \"is_banned\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a comment.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -82394813,\n  \"commentator_name\": \"occaecat id cupidatat dolore in\",\n  \"content\": \"do E\",\n  \"news_id\": 45894258,\n  \"create_at\": \"1994-08-19T17:00:16.345Z\",\n  \"is_banned\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "update"
+							},
+							"response": [
+								{
+									"name": "return status and object",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -82394813,\n  \"commentator_name\": \"occaecat id cupidatat dolore in\",\n  \"content\": \"do E\",\n  \"news_id\": 45894258,\n  \"create_at\": \"1994-08-19T17:00:16.345Z\",\n  \"is_banned\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/comment/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comment",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a news.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/comment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comment/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comment",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Returns a list of comment in a news.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/comment?news_id=79255861&commentator_name=veniam do sed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comment"
+							],
+							"query": [
+								{
+									"key": "news_id",
+									"value": "79255861"
+								},
+								{
+									"key": "commentator_name",
+									"value": "veniam do sed"
+								}
+							]
+						},
+						"description": "list comment"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/comment?news_id=79255861&commentator_name=veniam do sed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comment"
+									],
+									"query": [
+										{
+											"key": "news_id",
+											"value": "79255861"
+										},
+										{
+											"key": "commentator_name",
+											"value": "veniam do sed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 53329899,\n    \"commentator_name\": \"minim\",\n    \"content\": \"Excepteur proident mollit\",\n    \"news_id\": -50494676,\n    \"create_at\": \"1976-07-09T17:14:26.913Z\",\n    \"is_banned\": true\n  },\n  {\n    \"id\": -64633554,\n    \"commentator_name\": \"qui laborum Duis dolor\",\n    \"content\": \"labore quis\",\n    \"news_id\": 6678345,\n    \"create_at\": \"1996-12-21T21:00:28.386Z\",\n    \"is_banned\": false\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a comment.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -82394813,\n  \"commentator_name\": \"occaecat id cupidatat dolore in\",\n  \"content\": \"do E\",\n  \"news_id\": 45894258,\n  \"create_at\": \"1994-08-19T17:00:16.345Z\",\n  \"is_banned\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comment"
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -82394813,\n  \"commentator_name\": \"occaecat id cupidatat dolore in\",\n  \"content\": \"do E\",\n  \"news_id\": 45894258,\n  \"create_at\": \"1994-08-19T17:00:16.345Z\",\n  \"is_banned\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 53721577,\n  \"title\": \"eiusmod laborum eu ipsum\",\n  \"content\": \"proident consequat c\",\n  \"category_id\": -22189193,\n  \"author_id\": -32390206,\n  \"create_at\": \"1943-08-19T16:43:51.130Z\",\n  \"is_published\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tag",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Returns a tag detail.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "get detail"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tag/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tag",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a tag.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tag/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "update"
+							},
+							"response": [
+								{
+									"name": "return status and object",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tag/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tag",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a tag.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-98835131",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "delete"
+							},
+							"response": [
+								{
+									"name": "return list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tag/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tag",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-98835131",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Returns a list of tag.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tag?name=veniam do sed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "veniam do sed"
+								}
+							]
+						},
+						"description": "list and search"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag?name=veniam do sed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "veniam do sed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -9625435,\n    \"name\": \"officia non velit incididunt\"\n  },\n  {\n    \"id\": 1498248,\n    \"name\": \"Ut quis proident aute tempor\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a tag.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag"
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tag",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -62547831,\n  \"name\": \"ut\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tag-news",
+			"item": [
+				{
+					"name": "Returns a list of tag_news.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag-news"
+							],
+							"query": [
+								{
+									"key": "tag_id",
+									"value": "-98835131"
+								},
+								{
+									"key": "news_id",
+									"value": "-98835131"
+								}
+							]
+						},
+						"description": "list and search"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag-news"
+									],
+									"query": [
+										{
+											"key": "tag_id",
+											"value": "-98835131"
+										},
+										{
+											"key": "news_id",
+											"value": "-98835131"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"tag_id\": 70165936,\n    \"news_id\": -29378566\n  },\n  {\n    \"tag_id\": 80973633,\n    \"news_id\": 65749688\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store a tag_news.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tag_id\": 4996620,\n  \"news_id\": 3798631\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag-news"
+							],
+							"query": [
+								{
+									"key": "tag_id",
+									"value": "-98835131"
+								},
+								{
+									"key": "news_id",
+									"value": "-98835131"
+								}
+							]
+						},
+						"description": "create"
+					},
+					"response": [
+						{
+							"name": "return saved object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tag_id\": 4996620,\n  \"news_id\": 3798631\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag-news"
+									],
+									"query": [
+										{
+											"key": "tag_id",
+											"value": "-98835131"
+										},
+										{
+											"key": "news_id",
+											"value": "-98835131"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a tag_news.",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag-news"
+							],
+							"query": [
+								{
+									"key": "tag_id",
+									"value": "-98835131"
+								},
+								{
+									"key": "news_id",
+									"value": "-98835131"
+								}
+							]
+						},
+						"description": "delete"
+					},
+					"response": [
+						{
+							"name": "return list",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tag-news?tag_id=-98835131&news_id=-98835131",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tag-news"
+									],
+									"query": [
+										{
+											"key": "tag_id",
+											"value": "-98835131"
+										},
+										{
+											"key": "news_id",
+											"value": "-98835131"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"code\": -91486675,\n  \"message\": \"commodo dolor\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

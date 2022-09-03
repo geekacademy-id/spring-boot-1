@@ -1,0 +1,626 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: 'Mob Portal'
+  license:
+    name: MIT
+servers:
+  - url: 'localhost:8080'
+paths:
+  /author:
+    get:
+      summary: "List and search Author"
+      description: "list and search"
+      parameters:
+        - in: query
+          name: fullname
+          schema:
+            type: string
+        - in: query
+          name: email
+          schema:
+            type: string
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfAuthor'
+    post:
+      summary: "Create Author"
+      description: "create"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        200:
+          description: "return saved object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Author'
+  /author/{id}:
+    parameters:
+        - name: id
+          in: path 
+          required: true
+          schema:
+            type: integer
+            format: int64
+    get:
+      summary: "Detail Author"
+      description: "get detail"
+      responses:
+        200:
+          description: "return detail"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Author'
+    post:
+      summary: "Update Author"
+      description: "update"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete Author"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+ 
+  /category:
+    get:
+      summary: "List and search Category"
+      description: "list and search"
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+        - in: query
+          name: description
+          schema:
+            type: string
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfCategory'
+    post:
+      summary: "Create Category"
+      description: "create"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        200:
+          description: "return saved object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Category'
+  /category/{id}:
+    parameters:
+        - name: id
+          in: path 
+          required: true
+          schema:
+            type: integer
+            format: int64
+    get:
+      summary: "Detail Category"
+      description: "get detail"
+      responses:
+        200:
+          description: "return detail"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Category'
+    post:
+      summary: "Update Category"
+      description: "update"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete Category"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+  /comment:
+    get:
+      description: "list and search"
+      parameters:
+        - in: query
+          name: commentator_name
+          schema: 
+            type: string
+        - in: query
+          name: content
+          schema:
+            type: string
+        - in: query
+          name: news_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: created_at
+          schema:
+            type: string
+        - in: query
+          name: is_banned
+          schema:
+            type: boolean
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfComment'
+    post:
+      summary: "Create Comment"
+      description: "create"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        200:
+          description: "return saved object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Comment'
+  /comment/{id}:
+    parameters:
+        - name: id
+          in: path 
+          required: true
+          schema:
+            type: integer
+            format: int64
+    get:
+      summary: "Detail Comment"
+      description: "get detail"
+      responses:
+        200:
+          description: "return detail"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Comment'
+    post:
+      summary: "Update Comment"
+      description: "update"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete Comment"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+  /news:
+    get:
+      summary: "List and search News"
+      description: "list and search"
+      parameters:
+        - in: query
+          name: title
+          schema: 
+            type: string
+        - in: query
+          name: content
+          schema:
+            type: string
+        - in: query
+          name: category_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: author_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: created_at
+          schema:
+            type: string
+        - in: query
+          name: is_published
+          schema:
+            type: boolean
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfNews'
+  /news/{id}:
+    parameters:
+        - name: id
+          in: path 
+          required: true
+          schema:
+            type: integer
+            format: int64
+    get:
+      summary: "Detail News"
+      description: "get detail"
+      responses:
+        200:
+          description: "return detail"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/News'
+    post:
+      summary: "Update News"
+      description: "update"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete News"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+  /tag:
+    get:
+      summary: "List and search Tag"
+      description: "list and search"
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfTag'
+    post:
+      summary: "Create Tag"
+      description: "create"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        200:
+          description: "return saved object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Tag'
+  /tag/{id}:
+    parameters:
+        - name: id
+          in: path 
+          required: true
+          schema:
+            type: integer
+            format: int64
+    get:
+      summary: "Detail Tag"
+      description: "get detail"
+      responses:
+        200:
+          description: "return detail"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Tag'
+    post:
+      summary: "Update Tag"
+      description: "update"
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete Tag"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+  /tag_news:
+    get:
+      summary: "List and search Tag News"
+      description: "list and search"
+      parameters:
+        - in: query
+          name: tag_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: news_id
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/ListOfTagNews'
+    post:
+      summary: "Update Tag News"
+      description: "update"
+      parameters:
+        - in: query
+          name: tag_id
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: news_id
+          schema:
+            type: integer
+            format: int64
+      requestBody: 
+        description: "json of object to be updated"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagNews'
+      responses:
+        200:
+          description: "return status and object"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+    delete:
+      summary: "Delete Tag News"
+      description: "delete"
+      responses:
+        200:
+          description: "return list"
+          content:
+            application/json:
+              schema: 
+                $ref : '#/components/schemas/Message'
+components:
+  schemas:
+    ListOfAuthor:
+      type: array
+      items:
+        $ref: '#/components/schemas/Author'
+    Author:
+      type: object
+      required:
+        - id
+        - email
+        - fullname
+      properties:
+        id:
+          type: integer
+          format: int64
+        fullname:
+          type: string
+        email:
+          type: string
+    ListOfCategory:
+      type: array
+      items:
+        $ref: '#/components/schemas/Category'
+    Category:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+    ListOfComment:
+      type: array
+      items:
+        $ref: '#/components/schemas/Comment'
+    Comment:
+      type: object
+      required:
+        - id
+        - commentator_name
+        - content
+        - news_id
+        - created_at
+        - is_banned
+      properties:
+        id:
+          type: integer
+          format: int64
+        commentator_name:
+          type: string
+        content:
+          type: string
+        news_id:
+          type: integer
+          format: int64
+        created_at:
+          type: string
+        is_banned:
+          type: boolean
+    ListOfNews:
+      type: array
+      items:
+        $ref: '#/components/schemas/News'
+    News:
+      type: object
+      required:
+        - id
+        - title
+        - content
+        - category_id
+        - author_id
+        - created_at
+        - is_published
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        content:
+          type: string
+        category_id:
+          type: integer
+          format: int64
+        author_id:
+          type: integer
+          format: int64
+        created_at:
+          type: string
+        is_published:
+          type: boolean
+    ListOfTag:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+    Tag:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    ListOfTagNews:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagNews'
+    TagNews:
+      type: object
+      required:
+        - tag_id
+        - news_id
+      properties:
+        tag_id:
+          type: integer
+          format: int64
+        news_id:
+          type: integer
+          format: int64
+    Message:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        data:
+          type: object
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []
