@@ -431,6 +431,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Message'
+  /report:
+    get:
+      tags:
+        - Report
+      description: 'get all report'
+      responses:
+        200:
+          description: 'return list of report'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
 components:
   schemas:
     ListOfAuthor:
@@ -546,6 +558,20 @@ components:
         is_banned:
           type: boolean
           default: false
+    Report:
+      type: object
+      required:
+        - pie_chart
+        - bar_chart
+      properties:
+        pie_chart:
+          type: array
+          items:
+            type: object
+        bar_chart:
+          type: array
+          items:
+            type: object
     Message:
       type: object
       required:
