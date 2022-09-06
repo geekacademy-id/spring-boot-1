@@ -1,2 +1,4 @@
-package com.mob.portal.Entity;public class Author {
+package com.mob.portal.Entity;
+
+public class Author {
 }

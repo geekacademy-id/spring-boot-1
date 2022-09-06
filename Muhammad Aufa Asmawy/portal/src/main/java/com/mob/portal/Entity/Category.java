@@ -1,2 +1,4 @@
-package com.mob.portal.Entity;public class Category {
+package com.mob.portal.Entity;
+
+public class Category {
 }

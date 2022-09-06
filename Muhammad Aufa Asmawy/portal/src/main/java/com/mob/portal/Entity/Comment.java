@@ -1,2 +1,4 @@
-package com.mob.portal.Entity;public class Comment {
+package com.mob.portal.Entity;
+
+public class Comment {
 }
