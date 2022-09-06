@@ -1,2 +1,7 @@
-package com.mob.portal.Repository;public interface AuthorRepository {
+package com.mob.portal.Repository;
+
+import com.mob.portal.Entity.Author;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AuthorRepository extends JpaRepository<Author, Long> {
 }

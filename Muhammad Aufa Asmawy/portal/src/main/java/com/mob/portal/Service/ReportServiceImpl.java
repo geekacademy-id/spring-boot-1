@@ -1,5 +1,5 @@
 package com.mob.portal.Service;
 
-public class ReportService {
+public class ReportServiceImpl {
 
 }

@@ -1,2 +1,7 @@
-package com.mob.portal.Repository;public interface CommentRepository {
+package com.mob.portal.Repository;
+
+import com.mob.portal.Entity.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }
