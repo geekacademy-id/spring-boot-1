@@ -2,6 +2,7 @@ package com.javan.helloworldweb.services;
 
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Comment;
+import com.javan.helloworldweb.models.EmailDetails;
 import com.javan.helloworldweb.models.News;
 import com.javan.helloworldweb.models.dto.CommentDto;
 import com.javan.helloworldweb.repositories.CommentRepository;
@@ -19,6 +20,9 @@ public class CommentService {
     @Autowired
     private NewsRepository newsRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     public List<Comment> list() {
         return commentRepository.findAll();
     }
@@ -34,6 +38,15 @@ public class CommentService {
         comment.setNews(news);
         comment.setIsBanned(dto.getIsBanned());
 
+        // send email
+        EmailDetails details = new EmailDetails();
+
+        String content = String.format("Berita kamu yang berjudul \"%s\" dikomen oleh %s", news.getTitle(), dto.getCommentatorName());
+        details.setRecipient(news.getAuthor().getEmail());
+        details.setSubject("Ada yang komen nih");
+        details.setContent(content);
+
+        emailService.sendEmail(details);
         return commentRepository.save(comment);
     }
 
