@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -24,5 +25,11 @@ public class HandlerController {
         }));
 
         return new Response(HttpStatus.BAD_REQUEST, "Validation", map);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseBody
+    public Response handleNotFoundExceptions(NotFoundException e) {
+        return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
     }
 }
