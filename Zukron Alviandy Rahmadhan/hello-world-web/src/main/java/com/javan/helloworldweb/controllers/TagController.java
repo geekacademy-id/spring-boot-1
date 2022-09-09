@@ -1,7 +1,9 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import com.javan.helloworldweb.models.Tag;
+import com.javan.helloworldweb.models.dto.TagDto;
 import com.javan.helloworldweb.services.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,15 +23,15 @@ public class TagController {
     }
 
     @PostMapping
-    public Response create(@Valid @RequestBody Tag tag) {
-        tagService.create(tag);
+    public Response create(@Valid @RequestBody TagDto tagDto) {
+        Tag tag = tagService.create(tagDto);
 
         return new Response(HttpStatus.CREATED, "Success create tag", tag);
     }
 
     @PutMapping(value = "/{id}")
-    public Response update(@PathVariable("id") Long id, @Valid @RequestBody Tag tag) {
-        tagService.update(id, tag);
+    public Response update(@PathVariable("id") Long id, @Valid @RequestBody TagDto tagDto) throws NotFoundException {
+        Tag tag = tagService.update(id, tagDto);
 
         return new Response(HttpStatus.OK, "Success create tag", tag);
     }

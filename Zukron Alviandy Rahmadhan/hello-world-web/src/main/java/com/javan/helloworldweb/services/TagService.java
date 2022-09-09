@@ -1,6 +1,8 @@
 package com.javan.helloworldweb.services;
 
+import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Tag;
+import com.javan.helloworldweb.models.dto.TagDto;
 import com.javan.helloworldweb.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,21 @@ public class TagService {
         return tagRepository.findAll();
     }
 
-    public void create(Tag tag) {
-        tagRepository.save(tag);
+    public Tag create(TagDto dto) {
+        Tag tag = new Tag();
+        tag.setName(dto.getName());
+
+        return tagRepository.save(tag);
     }
 
-    public void update(Long id, Tag tag) {
-        tagRepository.findById(id)
-                .ifPresent(item -> {
-                    item.setName(tag.getName());
+    public Tag update(Long id, TagDto dto) throws NotFoundException {
+        Tag tag = tagRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Tag not found"));
 
-                    tagRepository.save(item);
-                });
+        tag.setName(dto.getName());
+
+        return tagRepository.save(tag);
     }
 
     public void delete(Long id) {
