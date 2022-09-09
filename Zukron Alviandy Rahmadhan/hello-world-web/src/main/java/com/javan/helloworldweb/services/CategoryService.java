@@ -1,6 +1,8 @@
 package com.javan.helloworldweb.services;
 
+import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Category;
+import com.javan.helloworldweb.models.dto.CategoryDto;
 import com.javan.helloworldweb.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,18 +18,23 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public void create(Category category) {
-        categoryRepository.save(category);
+    public Category create(CategoryDto dto) {
+        Category category = new Category();
+        category.setName(dto.getName());
+        category.setDescription(dto.getDescription());
+
+        return categoryRepository.save(category);
     }
 
-    public void update(Long id, Category category) {
-        categoryRepository.findById(id)
-                .ifPresent(item -> {
-                    item.setName(category.getName());
-                    item.setDescription(category.getDescription());
+    public Category update(Long id, CategoryDto dto) throws NotFoundException {
+        Category category = categoryRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Category not found"));
 
-                    categoryRepository.save(item);
-                });
+        category.setName(dto.getName());
+        category.setDescription(dto.getDescription());
+
+        return categoryRepository.save(category);
     }
 
     public void delete(Long id) {
