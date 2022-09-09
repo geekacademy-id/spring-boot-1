@@ -8,8 +8,6 @@ import javax.validation.constraints.NotNull;
 
 @Data
 public class NewsDto {
-    private Long id;
-
     @NotBlank(message = "Title is required")
     private String title;
 

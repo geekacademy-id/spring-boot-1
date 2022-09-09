@@ -1,6 +1,8 @@
 package com.javan.helloworldweb.services;
 
+import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Author;
+import com.javan.helloworldweb.models.dto.AuthorDto;
 import com.javan.helloworldweb.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,23 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-    public void create(Author author) {
-        authorRepository.save(author);
+    public Author create(AuthorDto dto) {
+        Author author = new Author();
+        author.setFullname(dto.getFullname());
+        author.setEmail(dto.getEmail());
+
+        return authorRepository.save(author);
     }
 
-    public void update(Long id, Author author) {
-        authorRepository.findById(id).ifPresent(item -> {
-            item.setFullname(author.getFullname());
-            item.setEmail(author.getEmail());
+    public Author update(Long id, AuthorDto dto) throws NotFoundException {
+        Author author = authorRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Author not found"));
 
-            authorRepository.save(item);
-        });
+        author.setFullname(dto.getFullname());
+        author.setEmail(dto.getEmail());
+
+        return authorRepository.save(author);
     }
 
     public void delete(Long id) {
