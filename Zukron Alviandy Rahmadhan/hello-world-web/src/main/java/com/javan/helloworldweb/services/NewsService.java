@@ -28,6 +28,10 @@ public class NewsService {
         return newsRepository.findAll();
     }
 
+    public List<News> search(String keyword) {
+        return newsRepository.findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(keyword, keyword);
+    }
+
     public News create(NewsDto dto) throws NotFoundException {
         Category category = categoryRepository
                 .findById(dto.getCategoryId())

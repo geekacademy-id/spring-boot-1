@@ -18,8 +18,12 @@ public class NewsController {
     private NewsService newsService;
 
     @GetMapping
-    public Response all() {
-        return new Response(HttpStatus.OK, "Success list all news", newsService.list());
+    public Response all(@RequestParam(value = "search", required = false) String keyword) {
+        if (keyword != null) {
+            return new Response(HttpStatus.OK, "Success list all news", newsService.search(keyword));
+        } else {
+            return new Response(HttpStatus.OK, "Success list all news", newsService.list());
+        }
     }
 
     @PostMapping
