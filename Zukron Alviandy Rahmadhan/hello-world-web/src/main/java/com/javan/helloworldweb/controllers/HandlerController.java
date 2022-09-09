@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.exceptions.BadArgumentException;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import org.springframework.http.HttpStatus;
@@ -31,5 +32,11 @@ public class HandlerController {
     @ResponseBody
     public Response handleNotFoundExceptions(NotFoundException e) {
         return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
+
+    }
+    @ExceptionHandler(BadArgumentException.class)
+    @ResponseBody
+    public Response handleBadArgumentExceptions(NotFoundException e) {
+        return new Response(HttpStatus.BAD_REQUEST, "Bad Argument", e.getMessage());
     }
 }
