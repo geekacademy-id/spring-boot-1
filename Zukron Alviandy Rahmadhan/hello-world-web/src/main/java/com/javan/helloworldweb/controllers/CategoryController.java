@@ -40,7 +40,7 @@ public class CategoryController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public Response delete(@PathVariable("id") Long id) {
+    public Response delete(@PathVariable("id") Long id) throws NotFoundException {
         categoryService.delete(id);
 
         return new Response(HttpStatus.OK, "Success create category", null);

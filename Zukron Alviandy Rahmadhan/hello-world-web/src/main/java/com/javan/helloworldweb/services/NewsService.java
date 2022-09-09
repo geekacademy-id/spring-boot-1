@@ -69,7 +69,11 @@ public class NewsService {
         return newsRepository.save(news);
     }
 
-    public void delete(Long id) {
-        newsRepository.deleteById(id);
+    public void delete(Long id) throws NotFoundException {
+        News news = newsRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("News not found"));
+
+        newsRepository.delete(news);
     }
 }

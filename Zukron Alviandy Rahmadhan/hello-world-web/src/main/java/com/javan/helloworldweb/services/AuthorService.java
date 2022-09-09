@@ -37,7 +37,11 @@ public class AuthorService {
         return authorRepository.save(author);
     }
 
-    public void delete(Long id) {
-        authorRepository.deleteById(id);
+    public void delete(Long id) throws NotFoundException {
+        Author author = authorRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Author not found"));
+
+        authorRepository.delete(author);
     }
 }

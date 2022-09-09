@@ -35,7 +35,11 @@ public class TagService {
         return tagRepository.save(tag);
     }
 
-    public void delete(Long id) {
-        tagRepository.deleteById(id);
+    public void delete(Long id) throws NotFoundException {
+        Tag tag = tagRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Tag not found"));
+
+        tagRepository.delete(tag);
     }
 }

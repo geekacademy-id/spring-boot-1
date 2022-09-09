@@ -37,7 +37,7 @@ public class AuthorController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public Response delete(@PathVariable("id") Long id) {
+    public Response delete(@PathVariable("id") Long id) throws NotFoundException {
         authorService.delete(id);
 
         return new Response(HttpStatus.OK, "Success create author", null);

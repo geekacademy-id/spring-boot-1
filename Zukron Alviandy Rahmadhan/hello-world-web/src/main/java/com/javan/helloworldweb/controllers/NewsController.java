@@ -37,7 +37,7 @@ public class NewsController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public Response delete(@PathVariable("id") Long id) {
+    public Response delete(@PathVariable("id") Long id) throws NotFoundException {
         newsService.delete(id);
 
         return new Response(HttpStatus.OK, "Success create news", null);
