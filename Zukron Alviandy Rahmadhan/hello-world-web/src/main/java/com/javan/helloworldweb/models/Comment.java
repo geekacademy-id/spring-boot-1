@@ -15,20 +15,21 @@ public class Comment {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "comentator_name")
+    @Column(name = "comentator_name", nullable = false)
     private String commentatorName;
 
+    @Column(nullable = false)
     private String content;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "news_id")
+    @JoinColumn(name = "news_id", nullable = false)
     private News news;
 
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
-    @Column(name = "is_banned")
+    @Column(name = "is_banned", nullable = false)
     private Boolean isBanned;
 
 }
