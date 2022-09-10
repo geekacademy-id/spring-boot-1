@@ -1,13 +1,8 @@
-package com.mob.portal.Service;
+package com.mob.portal.Service.EntityService;
 
 import com.mob.portal.Entity.Author;
 import com.mob.portal.Repository.AuthorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class AuthorService extends EntityService <AuthorRepository, Author, Long>{

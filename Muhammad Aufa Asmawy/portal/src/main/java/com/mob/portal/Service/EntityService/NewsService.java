@@ -1,12 +1,8 @@
-package com.mob.portal.Service;
+package com.mob.portal.Service.EntityService;
 
 import com.mob.portal.Entity.News;
 import com.mob.portal.Repository.NewsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class NewsService extends EntityService <NewsRepository, News, Long>{

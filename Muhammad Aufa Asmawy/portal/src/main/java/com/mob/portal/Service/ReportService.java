@@ -1,5 +1,8 @@
 package com.mob.portal.Service;
 
-public class ReportServiceImpl {
+import org.springframework.stereotype.Component;
+
+@Component
+public class ReportService {
 
 }

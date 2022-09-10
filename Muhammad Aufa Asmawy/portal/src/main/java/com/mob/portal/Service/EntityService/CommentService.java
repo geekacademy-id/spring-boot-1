@@ -1,12 +1,8 @@
-package com.mob.portal.Service;
+package com.mob.portal.Service.EntityService;
 
 import com.mob.portal.Entity.Comment;
 import com.mob.portal.Repository.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class CommentService extends EntityService <CommentRepository, Comment, Long>{

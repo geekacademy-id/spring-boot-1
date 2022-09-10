@@ -1,13 +1,18 @@
 package com.mob.portal.Api;
 
-import com.mob.portal.Entity.Category;
 import com.mob.portal.Entity.Tag;
-import com.mob.portal.Helper.ResponseFormatter;
+import com.mob.portal.EntityDTO.TagDTO;
+import com.mob.portal.Helper.ResponseBodyFormatter;
 import com.mob.portal.Repository.TagRepository;
+import com.mob.portal.Service.EntityService.EntityService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,59 +20,90 @@ import java.util.Optional;
 @RequestMapping("/api/v1.0/tag/")
 public class TagController {
     @Autowired
-    private TagRepository tagRepository;
+    private EntityService<TagRepository, Tag, Long> tagService;
 
     @Autowired
-    ResponseFormatter responseFormatter;
+    ResponseBodyFormatter responseBodyFormatter;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     @GetMapping
-    public ResponseFormatter findAllAuthor(){
-        List<Tag> data = (List<Tag>) tagRepository.findAll();
-        return responseFormatter.generate(200, "Success get all data", data);
+    public ResponseEntity<ResponseBodyFormatter> findAll(){
+        List<Tag> data = (List<Tag>) tagService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(
+                responseBodyFormatter.success("Success get all data", data)
+        );
     }
 
     @PostMapping
-    public ResponseFormatter saveAuthor(@Validated @RequestBody Tag object){
-        Tag data = tagRepository.save(object);
-        return responseFormatter.generate(200, "Success add one data", data);
+    public ResponseEntity<ResponseBodyFormatter> save(@Valid @RequestBody TagDTO object, Errors errors){
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    responseBodyFormatter.error(errors)
+            );
+        }
+
+        Tag data = tagService.save(modelMapper.map(object, Tag.class));
+        return ResponseEntity.status(HttpStatus.OK).body(
+                responseBodyFormatter.success("Success add one data", data)
+        );
     }
 
     @GetMapping("/{id}")
-    public ResponseFormatter findAuthorById(@PathVariable(value = "id") long id){
-        Optional<Tag> target = tagRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> findById(@PathVariable(value = "id") long id){
+        Optional<Tag> target = tagService.findById(id);
 
         if(target.isPresent()){
             Tag data = target.get();
-            return responseFormatter.generate(200, "Success delete data by id: " + id, data);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success get data by id: " + id, data)
+            );
         }else {
-            return responseFormatter.generate(400, "Failed to get data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 
     @PostMapping("/{id}")
-    public ResponseFormatter updateAuthorById(@PathVariable(value = "id") long id, @RequestBody Tag object){
-        Optional<Tag> target = tagRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> updateById(@PathVariable(value = "id") long id, @Valid @RequestBody TagDTO object, Errors errors){
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    responseBodyFormatter.error(errors)
+            );
+        }
+
+        Optional<Tag> target = tagService.findById(id);
 
         if(target.isPresent()){
-            Tag tag = target.get();
-            tag.setName(object.getName());
-            Tag data = tagRepository.save(tag);
-            return responseFormatter.generate(200, "Success update data by id: " + id, data);
+            Tag newObject = target.get();
+            modelMapper.map(object, newObject);
+            Tag data = tagService.save(newObject);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success update data by id: " + id, data)
+            );
         }else{
-            return responseFormatter.generate(400, "Failed to update data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseFormatter deleteUserById(@PathVariable(value = "id") long id){
-        Optional<Tag> target = tagRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> deleteById(@PathVariable(value = "id") long id){
+        Optional<Tag> target = tagService.findById(id);
 
         if(target.isPresent()){
-            tagRepository.deleteById(id);
-            List<Tag> data = tagRepository.findAll();
-            return responseFormatter.generate(200, "Success delete data by id: " + id, data);
+            tagService.deleteById(id);
+            List<Tag> data = tagService.findAll();
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success delete data by id: " + id, data)
+            );
         }else {
-            return responseFormatter.generate(400, "Failed to delete data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 }

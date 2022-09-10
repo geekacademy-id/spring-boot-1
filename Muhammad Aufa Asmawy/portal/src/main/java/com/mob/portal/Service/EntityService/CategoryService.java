@@ -1,12 +1,8 @@
-package com.mob.portal.Service;
+package com.mob.portal.Service.EntityService;
 
 import com.mob.portal.Entity.Category;
 import com.mob.portal.Repository.CategoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class CategoryService extends EntityService <CategoryRepository, Category, Long>{
