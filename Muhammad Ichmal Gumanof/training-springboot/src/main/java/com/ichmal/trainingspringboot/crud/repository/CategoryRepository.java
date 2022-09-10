@@ -1,6 +1,6 @@
-package com.mob.portal.Repository;
+package com.ichmal.trainingspringboot.crud.repository;
 
-import com.mob.portal.Entity.Category;
+import com.ichmal.trainingspringboot.crud.models.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

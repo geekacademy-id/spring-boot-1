@@ -3,6 +3,5 @@ package com.mob.portal.Service;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReportService {
-
+public class MailService {
 }
