@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -29,10 +30,25 @@ public class NewsController {
     private ModelMapper modelMapper;
 
     @GetMapping
-    public ResponseEntity<ResponseBodyFormatter> findAll(){
+    public ResponseEntity<ResponseBodyFormatter> findAll(@RequestParam Map<String, Object> allParams){
+        System.out.println(allParams.entrySet());
         List<News> data = (List<News>) newsService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(
                 responseBodyFormatter.success("Success get all data", data)
+        );
+    }
+
+    @PostMapping
+    public ResponseEntity<ResponseBodyFormatter> save(@Valid @RequestBody NewsDTO object, Errors errors){
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    responseBodyFormatter.error(errors)
+            );
+        }
+
+        News data = newsService.save(modelMapper.map(object, News.class));
+        return ResponseEntity.status(HttpStatus.OK).body(
+                responseBodyFormatter.success("Success add one data", data)
         );
     }
 
@@ -50,23 +66,6 @@ public class NewsController {
                     responseBodyFormatter.error("Data by id: " + id + " not found")
             );
         }
-    }
-
-    @PostMapping
-    public ResponseEntity<ResponseBodyFormatter> save(@RequestBody NewsDTO object){
-//        if(errors.hasErrors()){
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-//                    responseBodyFormatter.error(errors)
-//            );
-//        }
-
-        System.out.println(object.getTagSet().size());
-
-//        News data = newsService.save(modelMapper.map(object, News.class));
-//        return ResponseEntity.status(HttpStatus.OK).body(
-//                responseBodyFormatter.success("Success add one data", data)
-//        );
-        return null;
     }
 
     @PostMapping("/{id}")

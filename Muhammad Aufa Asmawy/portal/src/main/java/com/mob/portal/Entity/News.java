@@ -1,6 +1,8 @@
 package com.mob.portal.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +16,10 @@ import java.util.Set;
 @Entity
 @Table(name = "news")
 @Getter
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id"
+//)
 public class News implements Serializable {
 
     @Serial
@@ -52,6 +58,6 @@ public class News implements Serializable {
     @JoinTable(name = "tag_news",
             joinColumns = @JoinColumn(name = "news_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    @JsonManagedReference
+//    @JsonManagedReference
     private Set<Tag> tagSet;
 }
