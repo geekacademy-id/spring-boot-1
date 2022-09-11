@@ -1,6 +1,7 @@
 package com.mob.portal.Api;
 
 import com.mob.portal.Entity.Comment;
+import com.mob.portal.EntityDTO.CommentDTO;
 import com.mob.portal.EntityDTO.NewsDTO;
 import com.mob.portal.Helper.ResponseBodyFormatter;
 import com.mob.portal.Repository.CommentRepository;
@@ -37,7 +38,7 @@ public class CommentController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBodyFormatter> save(@Valid @RequestBody NewsDTO object, Errors errors){
+    public ResponseEntity<ResponseBodyFormatter> save(@Valid @RequestBody CommentDTO object, Errors errors){
         if(errors.hasErrors()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     responseBodyFormatter.error(errors)
@@ -67,7 +68,7 @@ public class CommentController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<ResponseBodyFormatter> updateById(@PathVariable(value = "id") long id, @Valid @RequestBody NewsDTO object, Errors errors){
+    public ResponseEntity<ResponseBodyFormatter> updateById(@PathVariable(value = "id") long id, @Valid @RequestBody CommentDTO object, Errors errors){
         if(errors.hasErrors()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     responseBodyFormatter.error(errors)

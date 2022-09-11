@@ -8,9 +8,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -36,5 +33,6 @@ public class NewsDTO {
     private Author author;
 
     @Setter
-    private ArrayList<Tag> tagSet;
+    @NotNull(message = "tagSet is required")
+    private Set<Tag> tagSet;
 }

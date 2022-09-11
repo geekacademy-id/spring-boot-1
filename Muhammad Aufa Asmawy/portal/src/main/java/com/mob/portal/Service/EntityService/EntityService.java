@@ -5,11 +5,17 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public abstract class EntityService<R extends JpaRepository<E, ID>, E, ID> {
     @Autowired
     private R genericRepository;
+
+    public List<E> findAll(Map<String, Object> allParams){
+//        JpaRepository<E, ID> jpaRepository = (JpaRepository<E, ID>) genericRepository;
+        return genericRepository.findAll();
+    }
 
     public List<E> findAll(){
 //        JpaRepository<E, ID> jpaRepository = (JpaRepository<E, ID>) genericRepository;
