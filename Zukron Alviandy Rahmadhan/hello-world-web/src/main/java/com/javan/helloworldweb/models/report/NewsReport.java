@@ -1,5 +1,6 @@
-package com.javan.helloworldweb.models;
+package com.javan.helloworldweb.models.report;
 
+import com.javan.helloworldweb.models.News;
 import lombok.Getter;
 
 import java.util.Date;

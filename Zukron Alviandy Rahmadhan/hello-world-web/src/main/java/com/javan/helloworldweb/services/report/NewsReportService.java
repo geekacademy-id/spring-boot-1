@@ -1,7 +1,7 @@
 package com.javan.helloworldweb.services.report;
 
 import com.javan.helloworldweb.exceptions.GlobalException;
-import com.javan.helloworldweb.models.NewsReport;
+import com.javan.helloworldweb.models.report.NewsReport;
 import com.javan.helloworldweb.repositories.NewsRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
