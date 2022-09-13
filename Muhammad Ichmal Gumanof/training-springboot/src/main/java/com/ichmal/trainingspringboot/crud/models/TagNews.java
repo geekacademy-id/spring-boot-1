@@ -14,10 +14,10 @@ public class TagNews {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "tag_id")
+    @JoinColumn(name = "tag_id", nullable = false)
     private Tag tag;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "news_id")
+    @JoinColumn(name = "news_id", nullable = false)
     private News news;
 }
