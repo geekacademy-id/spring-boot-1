@@ -33,13 +33,13 @@ public class NewsController {
     public Response update(@PathVariable("id") Long id, @Valid @RequestBody NewsDto newsDto) throws NotFoundException {
         News news = newsService.update(id, newsDto);
 
-        return new Response(HttpStatus.OK, "Success create news", news);
+        return new Response(HttpStatus.OK, "Success update news", news);
     }
 
     @DeleteMapping(value = "/{id}")
     public Response delete(@PathVariable("id") Long id) throws NotFoundException{
         newsService.delete(id);
 
-        return new Response(HttpStatus.OK, "Success create news", null);
+        return new Response(HttpStatus.OK, "Success delete news", null);
     }
 }

@@ -41,13 +41,13 @@ public class CategoryController {
     public Response update(@PathVariable("id") Long id, @Valid @RequestBody CategoryDto categoryDto) throws NotFoundException {
         Category category = categoryService.update(id, categoryDto);
 
-        return new Response(HttpStatus.OK, "Success create category", category);
+        return new Response(HttpStatus.OK, "Success update category", category);
     }
 
     @DeleteMapping(value = "/{id}")
     public Response delete(@PathVariable("id") Long id) throws NotFoundException{
         categoryService.delete(id);
 
-        return new Response(HttpStatus.OK, "Success create category", null);
+        return new Response(HttpStatus.OK, "Success delete category", null);
     }
 }

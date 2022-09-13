@@ -33,13 +33,13 @@ public class TagController {
     public Response update(@PathVariable("id") Long id, @Valid @RequestBody TagDto tagDto) throws NotFoundException {
         Tag tag = tagService.update(id, tagDto);
 
-        return new Response(HttpStatus.OK, "Success create tag", tag);
+        return new Response(HttpStatus.OK, "Success update tag", tag);
     }
 
     @DeleteMapping(value = "/{id}")
     public Response delete(@PathVariable("id") Long id) throws NotFoundException{
         tagService.delete(id);
 
-        return new Response(HttpStatus.OK, "Success create tag", null);
+        return new Response(HttpStatus.OK, "Success delete tag", null);
     }
 }

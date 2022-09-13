@@ -33,13 +33,13 @@ public class AuthorController {
     public Response update(@PathVariable("id") Long id, @Valid @RequestBody AuthorDto authorDto) throws NotFoundException {
         Author author = authorService.update(id, authorDto);
 
-        return new Response(HttpStatus.OK, "Success create author", author);
+        return new Response(HttpStatus.OK, "Success update author", author);
     }
 
     @DeleteMapping(value = "/{id}")
     public Response delete(@PathVariable("id") Long id) throws NotFoundException {
         authorService.delete(id);
 
-        return new Response(HttpStatus.OK, "Success create author", null);
+        return new Response(HttpStatus.OK, "Success delete author", null);
     }
 }
