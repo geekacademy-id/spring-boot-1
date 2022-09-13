@@ -1,6 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
-import com.javan.helloworldweb.exceptions.BadArgumentException;
+import com.javan.helloworldweb.exceptions.GlobalException;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import com.javan.helloworldweb.utils.StringExtensions;
@@ -10,6 +10,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,15 +32,15 @@ public class HandlerController {
         return new Response(HttpStatus.BAD_REQUEST, "Validation", map);
     }
 
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler({NotFoundException.class, FileNotFoundException.class})
     @ResponseBody
-    public Response handleNotFoundExceptions(NotFoundException e) {
+    public Response handleNotFoundExceptions(Exception e) {
         return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
-
     }
-    @ExceptionHandler(BadArgumentException.class)
+
+    @ExceptionHandler(GlobalException.class)
     @ResponseBody
-    public Response handleBadArgumentExceptions(NotFoundException e) {
-        return new Response(HttpStatus.BAD_REQUEST, "Bad Argument", e.getMessage());
+    public Response handleGlobalExceptions(Exception e) {
+        return new Response(HttpStatus.INTERNAL_SERVER_ERROR, "Error", e.getMessage());
     }
 }

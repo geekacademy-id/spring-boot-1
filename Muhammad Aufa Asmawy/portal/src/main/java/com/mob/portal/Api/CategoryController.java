@@ -1,12 +1,18 @@
 package com.mob.portal.Api;
 
 import com.mob.portal.Entity.Category;
-import com.mob.portal.Helper.ResponseFormatter;
+import com.mob.portal.EntityDTO.CategoryDTO;
+import com.mob.portal.Helper.ResponseBodyFormatter;
 import com.mob.portal.Repository.CategoryRepository;
+import com.mob.portal.Service.EntityService.EntityService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,60 +20,90 @@ import java.util.Optional;
 @RequestMapping("/api/v1.0/category/")
 public class CategoryController {
     @Autowired
-    private CategoryRepository categoryRepository;
+    private EntityService<CategoryRepository, Category, Long> categoryService;
 
     @Autowired
-    ResponseFormatter responseFormatter;
+    ResponseBodyFormatter responseBodyFormatter;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     @GetMapping
-    public ResponseFormatter findAllAuthor(){
-        List<Category> data = (List<Category>) categoryRepository.findAll();
-        return responseFormatter.generate(200, "Success get all data", data);
+    public ResponseEntity<ResponseBodyFormatter> findAll(){
+        List<Category> data = (List<Category>) categoryService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(
+                responseBodyFormatter.success("Success get all data", data)
+        );
     }
 
     @PostMapping
-    public ResponseFormatter saveAuthor(@Validated @RequestBody Category object){
-        Category data = categoryRepository.save(object);
-        return responseFormatter.generate(200, "Success add one data", data);
+    public ResponseEntity<ResponseBodyFormatter> save(@Valid @RequestBody CategoryDTO object, Errors errors){
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    responseBodyFormatter.error(errors)
+            );
+        }
+
+        Category data = categoryService.save(modelMapper.map(object, Category.class));
+        return ResponseEntity.status(HttpStatus.OK).body(
+                responseBodyFormatter.success("Success add one data", data)
+        );
     }
 
     @GetMapping("/{id}")
-    public ResponseFormatter findAuthorById(@PathVariable(value = "id") long id){
-        Optional<Category> target = categoryRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> findById(@PathVariable(value = "id") long id){
+        Optional<Category> target = categoryService.findById(id);
 
         if(target.isPresent()){
             Category data = target.get();
-            return responseFormatter.generate(200, "Success delete data by id: " + id, data);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success get data by id: " + id, data)
+            );
         }else {
-            return responseFormatter.generate(400, "Failed to get data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 
     @PostMapping("/{id}")
-    public ResponseFormatter updateAuthorById(@PathVariable(value = "id") long id, @RequestBody Category object){
-        Optional<Category> target = categoryRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> updateById(@PathVariable(value = "id") long id, @Valid @RequestBody CategoryDTO object, Errors errors){
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    responseBodyFormatter.error(errors)
+            );
+        }
+
+        Optional<Category> target = categoryService.findById(id);
 
         if(target.isPresent()){
-            Category category = target.get();
-            category.setName(object.getName());
-            category.setDescription(object.getDescription());
-            Category data = categoryRepository.save(category);
-            return responseFormatter.generate(200, "Success update data by id: " + id, data);
+            Category newObject = target.get();
+            modelMapper.map(object, newObject);
+            Category data = categoryService.save(newObject);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success update data by id: " + id, data)
+            );
         }else{
-            return responseFormatter.generate(400, "Failed to update data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseFormatter deleteUserById(@PathVariable(value = "id") long id){
-        Optional<Category> target = categoryRepository.findById(id);
+    public ResponseEntity<ResponseBodyFormatter> deleteById(@PathVariable(value = "id") long id){
+        Optional<Category> target = categoryService.findById(id);
 
         if(target.isPresent()){
-            categoryRepository.deleteById(id);
-            List<Category> data = categoryRepository.findAll();
-            return responseFormatter.generate(200, "Success delete data by id: " + id, data);
+            categoryService.deleteById(id);
+            List<Category> data = categoryService.findAll();
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    responseBodyFormatter.success("Success delete data by id: " + id, data)
+            );
         }else {
-            return responseFormatter.generate(400, "Failed to delete data by id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    responseBodyFormatter.error("Data by id: " + id + " not found")
+            );
         }
     }
 }
