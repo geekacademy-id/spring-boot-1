@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "author")
@@ -15,9 +13,8 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Full name is required")
+    @Column(nullable = false)
     private String fullname;
-    @NotBlank(message = "Email is required")
-    @Email
+    @Column(nullable = false)
     private String email;
 }

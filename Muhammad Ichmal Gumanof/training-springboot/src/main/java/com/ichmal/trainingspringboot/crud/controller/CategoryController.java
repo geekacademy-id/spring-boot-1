@@ -1,8 +1,10 @@
 package com.ichmal.trainingspringboot.crud.controller;
 
+import com.ichmal.trainingspringboot.crud.NotFoundException;
 import com.ichmal.trainingspringboot.crud.ResponseFormatter;
 import com.ichmal.trainingspringboot.crud.models.Category;
 import com.ichmal.trainingspringboot.crud.models.Response;
+import com.ichmal.trainingspringboot.crud.models.dto.CategoryDto;
 import com.ichmal.trainingspringboot.crud.repository.CategoryRepository;
 import com.ichmal.trainingspringboot.crud.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,34 +30,22 @@ public class CategoryController {
     }
 
     @PostMapping
-    public Response create(@Valid @RequestBody Category category) {
-        categoryService.create(category);
+    public Response create(@Valid @RequestBody CategoryDto categoryDto) {
+        Category category = categoryService.create(categoryDto);
 
-        return new Response(HttpStatus.CREATED, "Success create category", category);
+        return new Response(HttpStatus.CREATED, "Success create author", category);
     }
 
-    @GetMapping("/{id}")
-    public ResponseFormatter finAuthorById(@PathVariable(value = "id") long id){
-        Optional<Category> target = categoryRepository.findById(id);
-
-        if (target.isPresent()){
-            Category data = target.get();
-            return responseFormatter.generate(200, "Success search data by id: " + id, data);
-        } else {
-            return responseFormatter.generate(400, "failed to get data by id" + id);
-        }
-
-    }
 
     @PostMapping(value = "/{id}")
-    public Response update(@PathVariable("id") Long id, @Valid @RequestBody Category category) {
-        categoryService.update(id, category);
+    public Response update(@PathVariable("id") Long id, @Valid @RequestBody CategoryDto categoryDto) throws NotFoundException {
+        Category category = categoryService.update(id, categoryDto);
 
         return new Response(HttpStatus.OK, "Success create category", category);
     }
 
     @DeleteMapping(value = "/{id}")
-    public Response delete(@PathVariable("id") Long id) {
+    public Response delete(@PathVariable("id") Long id) throws NotFoundException{
         categoryService.delete(id);
 
         return new Response(HttpStatus.OK, "Success create category", null);

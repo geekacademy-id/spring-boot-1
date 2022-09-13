@@ -1,5 +1,6 @@
 package com.ichmal.trainingspringboot.crud.controller;
 
+import com.ichmal.trainingspringboot.crud.NotFoundException;
 import com.ichmal.trainingspringboot.crud.models.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -27,5 +28,10 @@ public class HandlerController {
         }));
 
         return new Response(HttpStatus.BAD_REQUEST, "Validation", map);
+    }
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseBody
+    public Response handleNotFoundExceptions(NotFoundException e) {
+        return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
     }
 }
