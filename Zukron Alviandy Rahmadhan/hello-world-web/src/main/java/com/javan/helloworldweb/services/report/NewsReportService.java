@@ -2,7 +2,9 @@ package com.javan.helloworldweb.services.report;
 
 import com.javan.helloworldweb.exceptions.GlobalException;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.export.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
@@ -36,11 +38,19 @@ public class NewsReportService {
             }
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, map, dataSource.getConnection());
 
-            // PDF Export
+            // Excel Export
             String uploadDir = StringUtils.cleanPath("./generated-reports/" + filename);
             Path uploadPath = Paths.get(uploadDir);
+            File output = new File(uploadPath.toString());
 
-            JasperExportManager.exportReportToPdfFile(jasperPrint, uploadPath.toString());
+            JRXlsxExporter exporter = new JRXlsxExporter();
+            SimpleXlsxReportConfiguration reportConfiguration = new SimpleXlsxReportConfiguration();
+            reportConfiguration.setSheetNames(new String[]{"News"});
+
+            exporter.setConfiguration(reportConfiguration);
+            exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(output));
+            exporter.exportReport();
 
             return new File(uploadPath.toString());
         } catch (Exception e) {

@@ -42,7 +42,7 @@ public class NewsController {
     public ResponseEntity<InputStreamResource> report(
             @RequestParam(value = "withComment", required = false) String withComment
     ) throws GlobalException, FileNotFoundException {
-        String filename = "News Report.pdf";
+        String filename = "News Report.xlsx";
         boolean withCommentBoolean = withComment != null && withComment.equals("true");
         File report = newsReportService.getReport(filename, withCommentBoolean);
 
