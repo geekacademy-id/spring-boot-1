@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport" pageWidth="512" pageHeight="842" columnWidth="512" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="0bf302b5-3601-43f2-9955-9ae7e99a9973">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Training Spring Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="NEWS_ID" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[new Long(3)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from comment
+where news_id = $P{NEWS_ID}]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<field name="comentator_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="comentator_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="comentator_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<field name="content" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="content"/>
+		<property name="com.jaspersoft.studio.field.label" value="content"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<field name="is_banned" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="is_banned"/>
+		<property name="com.jaspersoft.studio.field.label" value="is_banned"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<field name="news_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="news_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="news_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comment"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="512" height="20" uuid="ab1ff69b-bb05-4144-8a22-ed2ef6735ebc">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comentator_name} + " " + ($F{is_banned} ? "(Banned)" : "(-)")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="512" height="20" uuid="e38210e9-5fa5-4a1a-a4a9-3fac0bb36f08">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

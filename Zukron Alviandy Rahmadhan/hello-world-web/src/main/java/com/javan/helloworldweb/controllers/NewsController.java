@@ -39,9 +39,12 @@ public class NewsController {
     }
 
     @GetMapping(value = "/report")
-    public ResponseEntity<InputStreamResource> report() throws GlobalException, FileNotFoundException {
+    public ResponseEntity<InputStreamResource> report(
+            @RequestParam(value = "withComment", required = false) String withComment
+    ) throws GlobalException, FileNotFoundException {
         String filename = "News Report.pdf";
-        File report = newsReportService.getReport(filename);
+        boolean withCommentBoolean = withComment != null && withComment.equals("true");
+        File report = newsReportService.getReport(filename, withCommentBoolean);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);

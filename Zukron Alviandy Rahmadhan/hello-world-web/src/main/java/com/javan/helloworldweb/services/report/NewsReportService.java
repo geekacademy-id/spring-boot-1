@@ -1,40 +1,40 @@
 package com.javan.helloworldweb.services.report;
 
 import com.javan.helloworldweb.exceptions.GlobalException;
-import com.javan.helloworldweb.models.report.NewsReport;
-import com.javan.helloworldweb.repositories.NewsRepository;
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class NewsReportService {
     @Autowired
-    private NewsRepository newsRepository;
+    private DataSource dataSource;
 
-    public File getReport(String filename) throws GlobalException {
+    public File getReport(String filename, boolean withComment) throws GlobalException {
         try {
-            List<NewsReport> news = newsRepository
-                    .findAll()
-                    .stream()
-                    .map(NewsReport::new)
-                    .collect(Collectors.toList());
+            File file = withComment
+                    ? new ClassPathResource("reports/news_report_with_comment.jasper").getFile()
+                    : new ClassPathResource("reports/news_report.jasper").getFile();
 
-            File file = new ClassPathResource("reports/news_report.jrxml").getFile();
-            JasperReport report = JasperCompileManager.compileReport(file.getAbsolutePath());
-            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(news);
+            JasperReport report = (JasperReport) JRLoader.loadObject(file);
+            Map<String, Object> map = new HashMap<>();
 
-            JasperPrint jasperPrint = JasperFillManager.fillReport(report, null, dataSource);
+            if (withComment) {
+                File comment = new ClassPathResource("reports/comment.jasper").getFile();
+                map.put("COMMENT_REPORT", comment.getPath());
+            }
+            JasperPrint jasperPrint = JasperFillManager.fillReport(report, map, dataSource.getConnection());
 
             // PDF Export
             String uploadDir = StringUtils.cleanPath("./generated-reports/" + filename);
