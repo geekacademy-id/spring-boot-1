@@ -1,6 +1,8 @@
 package com.ichmal.trainingspringboot.crud.service;
 
+import com.ichmal.trainingspringboot.crud.NotFoundException;
 import com.ichmal.trainingspringboot.crud.models.Author;
+import com.ichmal.trainingspringboot.crud.models.dto.AuthorDto;
 import com.ichmal.trainingspringboot.crud.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,20 +22,29 @@ public class AuthorService {
         authorRepository.findById(id);
     }
 
-    public void create(Author author) {
-        authorRepository.save(author);
+    public Author create(AuthorDto dto) {
+        Author author = new Author();
+        author.setFullname(dto.getFullname());
+        author.setEmail(dto.getEmail());
+
+        return authorRepository.save(author);
     }
 
-    public void update(Long id, Author author) {
-        authorRepository.findById(id).ifPresent(item -> {
-            item.setFullname(author.getFullname());
-            item.setEmail(author.getEmail());
+    public Author update(Long id, AuthorDto dto) throws NotFoundException {
+        Author author = authorRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Author not found"));
 
-            authorRepository.save(item);
-        });
+        author.setFullname(dto.getFullname());
+        author.setEmail(dto.getEmail());
+        return authorRepository.save(author);
     }
 
-    public void delete(Long id) {
-        authorRepository.deleteById(id);
+    public void delete(Long id) throws NotFoundException {
+        Author author = authorRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Author not found"));
+
+        authorRepository.delete(author);
     }
 }

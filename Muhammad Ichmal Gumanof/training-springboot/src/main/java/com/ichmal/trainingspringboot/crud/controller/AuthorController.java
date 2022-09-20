@@ -1,74 +1,45 @@
 package com.ichmal.trainingspringboot.crud.controller;
 
-import com.ichmal.trainingspringboot.crud.ResponseFormatter;
+import com.ichmal.trainingspringboot.crud.NotFoundException;
 import com.ichmal.trainingspringboot.crud.models.Author;
-import com.ichmal.trainingspringboot.crud.repository.AuthorRepository;
+import com.ichmal.trainingspringboot.crud.models.Response;
+import com.ichmal.trainingspringboot.crud.models.dto.AuthorDto;
+import com.ichmal.trainingspringboot.crud.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
     @Autowired
-    private AuthorRepository authorRepository;
-    @Autowired
-    ResponseFormatter responseFormatter;
+    private AuthorService authorService;
 
     @GetMapping
-    public ResponseFormatter findALlAuthor() {
-        List<Author> data = authorRepository.findAll();
-        return responseFormatter.generate(200, "Success get all data", data);
+    public Response all() {
+        return new Response(HttpStatus.OK, "Success list all author", authorService.list());
     }
 
     @PostMapping
-    public ResponseFormatter saveAuthor(@Valid @RequestBody Author author) {
-        Author data = authorRepository.save(author);
+    public Response create(@Valid @RequestBody AuthorDto authorDto) {
+        Author author = authorService.create(authorDto);
 
-        return responseFormatter.generate(200, "Success add one data", data);
+        return new Response(HttpStatus.CREATED, "Success create author", author);
     }
 
-    @GetMapping("/{id}")
-    public ResponseFormatter finAuthorById(@PathVariable(value = "id") long id){
-        Optional<Author> target = authorRepository.findById(id);
+    @PutMapping(value = "/{id}")
+    public Response update(@PathVariable("id") Long id, @Valid @RequestBody AuthorDto authorDto) throws NotFoundException {
+        Author author = authorService.update(id, authorDto);
 
-        if (target.isPresent()){
-            Author data = target.get();
-            return responseFormatter.generate(200, "Success search data by id: " + id, data);
-        } else {
-            return responseFormatter.generate(400, "failed to get data by id" + id);
-        }
-
-    }
-
-    @PostMapping(value = "/{id}")
-    public ResponseFormatter updateAuthorById(@PathVariable("id") Long id, @Valid @RequestBody Author author) {
-        Optional<Author> target = authorRepository.findById(id);
-
-        if (target.isPresent()){
-            Author object = target.get();
-            object.setFullname(author.getFullname());
-            object.setEmail(author.getEmail());
-            Author data = authorRepository.save(object);
-            return responseFormatter.generate(200, "Success update data by id: "+id, data);
-        } else {
-            return responseFormatter.generate(400, "failed to update data by id" + id);
-        }
+        return new Response(HttpStatus.OK, "Success update author", author);
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseFormatter delete(@PathVariable("id") Long id) {
-        Optional<Author> target = authorRepository.findById(id);
+    public Response delete(@PathVariable("id") Long id) throws NotFoundException {
+        authorService.delete(id);
 
-        if(target.isPresent()) {
-            authorRepository.deleteById(id);
-            List<Author> data = authorRepository.findAll();
-            return responseFormatter.generate(200, "Success delete data by id "+id, data);
-        } else {
-            return responseFormatter.generate(400, "failed to delete data by id" + id);
-        }
+        return new Response(HttpStatus.OK, "Success delete author", null);
     }
 }

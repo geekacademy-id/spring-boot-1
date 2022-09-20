@@ -12,14 +12,11 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Getter
 @Setter
-public class Category {
+public class Tag {
     @Id
     @GeneratedValue
     private Long id;
 
     @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private String description;
 }
