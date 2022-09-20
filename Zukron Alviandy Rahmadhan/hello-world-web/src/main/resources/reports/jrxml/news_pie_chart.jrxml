@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="news_pie_chart" pageWidth="590" pageHeight="842" columnWidth="590" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ab7078bb-09cb-4398-8ed1-8b8a755ed839">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Training Spring Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="YXV0aG9yICwxNSwxNSw1MmI1Yzk0Zi0wY2Q3LTQ1N2MtYTA4ZC00YTRmMTU4ZWEzOWQ7"/>
+	<queryString>
+		<![CDATA[SELECT count( 1) AS total,
+	fullname
+FROM author
+join news on news.author_id = author.id
+group by fullname]]>
+	</queryString>
+	<field name="total" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+	</field>
+	<field name="fullname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fullname"/>
+		<property name="com.jaspersoft.studio.field.label" value="fullname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="author"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="202" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="2" width="590" height="200" uuid="851c35ae-8b1e-47d5-9705-0e7637eb2d52"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{fullname}]]></keyExpression>
+					<valueExpression><![CDATA[$F{total}]]></valueExpression>
+					<labelExpression><![CDATA[$F{fullname}]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</title>
+</jasperReport>

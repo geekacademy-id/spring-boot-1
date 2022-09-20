@@ -32,6 +32,12 @@ public class NewsReportService {
             JasperReport report = (JasperReport) JRLoader.loadObject(file);
             Map<String, Object> map = new HashMap<>();
 
+            // set chart
+            File pieChart = new ClassPathResource("reports/news_pie_chart.jasper").getFile();
+            File barChart = new ClassPathResource("reports/news_bar_chart.jasper").getFile();
+            map.put("PIE_CHART", pieChart.getPath());
+            map.put("BAR_CHART", barChart.getPath());
+
             if (withComment) {
                 File comment = new ClassPathResource("reports/comment.jasper").getFile();
                 map.put("COMMENT_REPORT", comment.getPath());

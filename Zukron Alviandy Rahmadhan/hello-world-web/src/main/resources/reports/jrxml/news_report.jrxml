@@ -99,6 +99,12 @@
 			<property name="com.jaspersoft.studio.field.tree.path" value="news"/>
 		</field>
 	</subDataset>
+	<parameter name="PIE_CHART" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Users\\Zalvyra\\JaspersoftWorkspace\\MyReports\\news_pie_chart.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BAR_CHART" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Users\\Zalvyra\\JaspersoftWorkspace\\MyReports\\news_bar_chart.jasper"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[select 
 news.id,
@@ -305,4 +311,18 @@ join author on author.id = news.author_id]]>
 			</textField>
 		</band>
 	</detail>
+	<summary>
+		<band height="480">
+			<subreport>
+				<reportElement x="2" y="0" width="550" height="180" uuid="c9ae44c2-b993-4f32-a961-a303812d0a0b"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{PIE_CHART}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="1" y="280" width="552" height="200" uuid="d642ad25-225e-4c13-a973-7fa6b8cf3828"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{BAR_CHART}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
 </jasperReport>
