@@ -1,6 +1,8 @@
 package com.ichmal.trainingspringboot.crud.service;
 
 import com.ichmal.trainingspringboot.crud.NotFoundException;
+import com.ichmal.trainingspringboot.crud.email.EmailDetail;
+import com.ichmal.trainingspringboot.crud.email.EmailService;
 import com.ichmal.trainingspringboot.crud.models.Comment;
 import com.ichmal.trainingspringboot.crud.models.News;
 import com.ichmal.trainingspringboot.crud.models.dto.CommentDto;
@@ -17,6 +19,8 @@ public class CommentService {
     private CommentRepository commentRepository;
     @Autowired
     private NewsRepository newsRepository;
+    @Autowired
+    private EmailService emailService;
 
     public List<Comment> list() {
         return commentRepository.findAll();
@@ -31,6 +35,15 @@ public class CommentService {
         comment.setNews(news);
         comment.setIsBanned(dto.getIsBanned());
 
+        // Send Email
+        EmailDetail detail = new EmailDetail();
+
+        String content = String.format("Berita kamu yang berjudul \"%s\" dikomen oleh %s", news.getTitle(), dto.getComentatorName());
+        detail.setRecipient(news.getAuthor().getEmail());
+        detail.setSubject("Berita kamu ada yang komen");
+        detail.setContent(content);
+
+        emailService.sendEmail(detail);
         return commentRepository.save(comment);
     }
 
