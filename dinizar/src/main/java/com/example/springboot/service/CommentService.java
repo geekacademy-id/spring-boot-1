@@ -1,0 +1,51 @@
+package com.example.springboot.service;
+
+import com.example.springboot.NotFoundException;
+import com.example.springboot.models.Comment;
+import com.example.springboot.models.News;
+import com.example.springboot.models.dto.CommentDto;
+import com.example.springboot.repository.CommentRepository;
+import com.example.springboot.repository.NewsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CommentService {
+    @Autowired
+    private CommentRepository commentRepository;
+    @Autowired
+    private NewsRepository newsRepository;
+
+    public List<Comment> list() {
+        return commentRepository.findAll();
+    }
+
+    public Comment create(CommentDto dto) throws NotFoundException {
+        News news = newsRepository.findById(dto.getNewsId()).orElseThrow(() -> new NotFoundException("News not found"));
+
+        Comment comment = new Comment();
+        comment.setComentatorName(dto.getComentatorName());
+        comment.setContent(dto.getContent());
+        comment.setNews(news);
+        comment.setIsBanned(dto.getIsBanned());
+
+        return commentRepository.save(comment);
+    }
+
+    public Comment update(Long id, CommentDto dto) throws NotFoundException {
+        Comment comment = commentRepository.findById(id).orElseThrow(() -> new NotFoundException("Comment not found"));
+
+        comment.setComentatorName(dto.getComentatorName());
+        comment.setContent(dto.getContent());
+        comment.setIsBanned(dto.getIsBanned());
+
+        return commentRepository.save(comment);
+    }
+
+    public void delete(Long id) throws NotFoundException {
+        Comment comment = commentRepository.findById(id).orElseThrow(() -> new NotFoundException("Comment not found"));
+        commentRepository.delete(comment);
+    }
+}

@@ -1,5 +1,6 @@
 package com.ichmal.trainingspringboot.crud.controller;
 
+import com.ichmal.trainingspringboot.crud.GlobalException;
 import com.ichmal.trainingspringboot.crud.NotFoundException;
 import com.ichmal.trainingspringboot.crud.StringExtensions;
 import com.ichmal.trainingspringboot.crud.models.Response;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,9 +34,15 @@ public class HandlerController {
 
         return new Response(HttpStatus.BAD_REQUEST, "Validation", map);
     }
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler({NotFoundException.class, FileNotFoundException.class})
     @ResponseBody
-    public Response handleNotFoundExceptions(NotFoundException e) {
+    public Response handleNotFoundExceptions(Exception e) {
         return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
+    }
+
+    @ExceptionHandler(GlobalException.class)
+    @ResponseBody
+    public Response handleGlobalExceptions(Exception e) {
+        return new Response(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", e.getMessage());
     }
 }
