@@ -27,7 +27,7 @@ public class NewsService {
     }
 
     public List<News> search(String keyword){
-        return newsRepository.findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(keyword, keyword);
+        return newsRepository.findByTitleOrAuthor_FullnameContainingIgnoreCaseOrContentContainingIgnoreCase(keyword, keyword, keyword);
     }
 
     public News create(NewsDto dto) throws NotFoundException {
