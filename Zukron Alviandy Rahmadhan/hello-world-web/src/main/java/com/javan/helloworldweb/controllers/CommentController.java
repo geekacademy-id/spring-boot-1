@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Comment;
 import com.javan.helloworldweb.models.Response;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/comment")
+@NeedToken
 public class CommentController {
     @Autowired
     private CommentService commentService;

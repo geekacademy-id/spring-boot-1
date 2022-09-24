@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import com.javan.helloworldweb.models.Tag;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/tag")
+@NeedToken
 public class TagController {
     @Autowired
     private TagService tagService;

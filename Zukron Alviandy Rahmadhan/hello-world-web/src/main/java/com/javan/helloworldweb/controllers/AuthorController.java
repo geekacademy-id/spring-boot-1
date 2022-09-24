@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Author;
 import com.javan.helloworldweb.models.Response;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/author")
+@NeedToken
 public class AuthorController {
     @Autowired
     private AuthorService authorService;

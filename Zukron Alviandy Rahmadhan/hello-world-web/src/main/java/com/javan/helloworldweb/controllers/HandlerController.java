@@ -2,6 +2,7 @@ package com.javan.helloworldweb.controllers;
 
 import com.javan.helloworldweb.exceptions.GlobalException;
 import com.javan.helloworldweb.exceptions.NotFoundException;
+import com.javan.helloworldweb.exceptions.UnauthenticatedException;
 import com.javan.helloworldweb.models.Response;
 import com.javan.helloworldweb.utils.StringExtensions;
 import lombok.experimental.ExtensionMethod;
@@ -38,9 +39,15 @@ public class HandlerController {
         return new Response(HttpStatus.NOT_FOUND, "Not Found", e.getMessage());
     }
 
-    @ExceptionHandler(GlobalException.class)
+    @ExceptionHandler({GlobalException.class, Exception.class})
     @ResponseBody
     public Response handleGlobalExceptions(Exception e) {
         return new Response(HttpStatus.INTERNAL_SERVER_ERROR, "Error", e.getMessage());
+    }
+
+    @ExceptionHandler(UnauthenticatedException.class)
+    @ResponseBody
+    public Response handleUnauthenticatedExceptions(Exception e) {
+        return new Response(HttpStatus.UNAUTHORIZED, "Unauthenticated", e.getMessage());
     }
 }

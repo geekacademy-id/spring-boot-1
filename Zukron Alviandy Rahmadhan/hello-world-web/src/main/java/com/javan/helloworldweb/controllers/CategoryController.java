@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Category;
 import com.javan.helloworldweb.models.Response;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category")
+@NeedToken
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

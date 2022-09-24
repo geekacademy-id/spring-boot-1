@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.GlobalException;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.News;
@@ -22,6 +23,7 @@ import java.io.FileNotFoundException;
 
 @RestController
 @RequestMapping("/news")
+@NeedToken
 public class NewsController {
     @Autowired
     private NewsService newsService;

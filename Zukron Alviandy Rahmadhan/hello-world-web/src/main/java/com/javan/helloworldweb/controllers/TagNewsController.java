@@ -1,5 +1,6 @@
 package com.javan.helloworldweb.controllers;
 
+import com.javan.helloworldweb.config.annotations.NeedToken;
 import com.javan.helloworldweb.exceptions.NotFoundException;
 import com.javan.helloworldweb.models.Response;
 import com.javan.helloworldweb.models.TagNews;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tag-news")
+@NeedToken
 public class TagNewsController {
     @Autowired
     private TagNewsService tagNewsService;
